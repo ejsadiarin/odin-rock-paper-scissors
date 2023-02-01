@@ -1,0 +1,22 @@
+ROCK PAPER SCISSORS 
+
+Logic
+
+1. Take in input for user
+- click of a button
+
+2. Add 3 choices: Rock, Paper, and Scissors
+
+3. Game Logic
+- Rock > Scissors === Rock wins
+- Scissors > Paper === Scissors wins
+- Paper > Rock === Paper wins
+
+4. Get computer choice randomly
+- using math random * 3
+- with math floor
+
+5. If 1 then rock 2 paper 3 scissors
+
+6. Compare human input to computer choice
+7. Add if statements to see who won
