@@ -1,4 +1,5 @@
-# odin-rock-paper-scissors
-Started February 1, 2023 3:43 PM
+# odin-rock-paper-scissors Web App version
+Started February 1, 2023 7:04 pm
 
-## 
+## Takeaways
+- DOM Manipulation
