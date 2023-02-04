@@ -30,46 +30,60 @@ container.appendChild(result);
 
 function rockChoice() {
     humanChoice.textContent = "You chose rock!";
-    return "rock";
+    getComputerChoice();
 }
 function paperChoice() {
     humanChoice.textContent = "You chose paper!";
-    return "paper";
+    getComputerChoice();
 }
 function scissorsChoice() {
     humanChoice.textContent = "You chose scissors!";
-    return "scissors";
+    getComputerChoice();
 }
+
+// function getHumanChoice() {
+//     let humanChoice = "";
+//     if (rockChoice() === true) {
+//         humanChoice = "rock";
+//     }
+//     if (paperEvent) {
+//         humanChoice = "paper";
+//     }
+//     if (scissorsEvent) {
+//         humanChoice = "scissors";
+//     }
+    
+//     return humanChoice;
+// }
+// getHumanChoice();
 
 rock.addEventListener('click', rockChoice);
 paper.addEventListener('click', paperChoice);
 scissors.addEventListener('click', scissorsChoice);
-
 // human
 
-function getHumanChoice() {
-    const humanChoice = rockChoice() 
-        || paperChoice()
-        || scissorsChoice();
-    return humanChoice;
-}
 
 // computer
 
 function getComputerChoice() {
-    const choices = ["rock", "paper", "scissors"];
+    const choices = {
+        1: "rock",
+        2: "paper",
+        3: "scissors"
+    };
     let randomNumber = Math.floor(Math.random() * 3 + 1);
+    alert(randomNumber);
     let choice = choices[randomNumber];
 
-    if (choice === "rock") {
+    if (choice === choices[1]) {
         computerChoice.textContent = "Computer chose rock!"
         return "rock";
     }
-    if (choice === "paper") {
+    if (choice === choices[2]) {
         computerChoice.textContent = "Computer chose paper!"
         return "paper";
     }
-    if (choice === "scissors") {
+    if (choice === choices[3]) {
         computerChoice.textContent = "Computer chose scissors!"
         return "scissors";
     }
@@ -77,8 +91,15 @@ function getComputerChoice() {
 
 // compare
 
-function compare(humanChoice, computerChoice) {
-    if (rockChoice() === "rock") {
-        result.textContent = "You win!"
+function compare(humanChoice) {
+    if (humanChoice === getComputerChoice()) {
+        result.textContent = "Tie!";
+    } 
+    if (humanChoice === "rock") {
+        
     }
+}
+
+function main() {
+    
 }
