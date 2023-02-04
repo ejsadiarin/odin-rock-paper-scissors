@@ -30,16 +30,16 @@
 // // Computer choice
 // function getComputerChoice() {
 //     let randomNumber = Math.floor(Math.random() * 3 + 1);
-//     let computerChoice = choices[randomNumber];
+    // let computerChoice = choices[randomNumber];
 
-//     if (computerChoice === "rock") {
-//         return "rock";
-//     }
-//     if (computerChoice === "paper") {
-//         return "paper";
-//     }
-//     if (computerChoice === "scissors") {
-//         return "scissors";
+    // if (computerChoice === "rock") {
+    //     return "rock";
+    // }
+    // if (computerChoice === "paper") {
+    //     return "paper";
+    // }
+    // if (computerChoice === "scissors") {
+    //     return "scissors";
 //     }
 // }
 
