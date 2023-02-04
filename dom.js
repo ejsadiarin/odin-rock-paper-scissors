@@ -28,9 +28,30 @@ function scissorsChoice() {
     result.textContent = "You chose scissors!";
 }
 
-rock.addEventListener('click', rockChoice);
+const rockOne = rock.addEventListener('click', rockChoice);
 paper.addEventListener('click', paperChoice);
 scissors.addEventListener('click', scissorsChoice);
 
 // computer
 
+function getComputerChoice() {
+    const choices = ["rock", "paper", "scissors"];
+    let randomNumber = Math.floor(Math.random() * 3 + 1);
+    let computerChoice = choices[randomNumber];
+
+    if (computerChoice === "rock") {
+        return "rock";
+    }
+    if (computerChoice === "paper") {
+        return "paper";
+    }
+    if (computerChoice === "scissors") {
+        return "scissors";
+    }
+}
+
+// compare
+
+function compare() {
+    
+}
