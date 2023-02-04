@@ -63,11 +63,28 @@ function scissorsChoice() {
 //     return humanChoice;
 // }
 // getHumanChoice();
-let roundCount = 1;
-while (roundCount <= 5 ) {   
-    rock.addEventListener('click', rockChoice);
-    paper.addEventListener('click', paperChoice);
-    scissors.addEventListener('click', scissorsChoice);
+let rockEvent = rock.addEventListener('click', playRound);
+let paperEvent = paper.addEventListener('click', playRound);
+let scissorsEvent = scissors.addEventListener('click', playRound);
+
+function playRound() {
+    let isActive = true;
+
+    while (isActive) {
+        if (rockEvent) {
+            rockChoice();
+        }
+        if (paperEvent) {
+            paperChoice();
+        }
+        if (scissorsEvent) {
+            scissorsChoice();
+        }
+    }
+}
+
+while (isActive) {   
+    let roundCount = 1;
     
     if (roundCount === 1) {
         round.textContent = "Round: 1";
@@ -83,6 +100,10 @@ while (roundCount <= 5 ) {
     }
     if (roundCount === 5) {
         round.textContent = "Round: 5";
+    }
+    if (roundCount === 6) {
+        roundCount = 1;
+        isActive = false;
     }
     roundCount++;
 }
