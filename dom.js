@@ -1,4 +1,3 @@
-const btn = document.querySelectorAll("button");
 const container = document.querySelector('.button-container');
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
@@ -10,9 +9,11 @@ container.appendChild(humanChoice);
 const computerChoice = document.createElement('p');
 container.appendChild(computerChoice);
 
-const result = document.createElement('p');
-container.appendChild(result);
+const result = document.getElementById("result");
+result.textContent = "test";
 
+const round = document.getElementById("round");
+// const btn = document.querySelectorAll("button");
 // for (let i = 0; i < btn.length; i++) {
 //     btn[i].style.color = 'red';
     
@@ -30,15 +31,21 @@ container.appendChild(result);
 
 function rockChoice() {
     humanChoice.textContent = "You chose rock!";
-    getComputerChoice();
+    const human = "rock"; 
+    const computer = getComputerChoice();
+    compare(human, computer);
 }
 function paperChoice() {
     humanChoice.textContent = "You chose paper!";
-    getComputerChoice();
+    const human = "paper"; 
+    const computer = getComputerChoice();
+    compare(human, computer);
 }
 function scissorsChoice() {
     humanChoice.textContent = "You chose scissors!";
-    getComputerChoice();
+    const human = "scissors"; 
+    const computer = getComputerChoice();
+    compare(human, computer);
 }
 
 // function getHumanChoice() {
@@ -56,10 +63,29 @@ function scissorsChoice() {
 //     return humanChoice;
 // }
 // getHumanChoice();
-
-rock.addEventListener('click', rockChoice);
-paper.addEventListener('click', paperChoice);
-scissors.addEventListener('click', scissorsChoice);
+let roundCount = 1;
+while (roundCount <= 5 ) {   
+    rock.addEventListener('click', rockChoice);
+    paper.addEventListener('click', paperChoice);
+    scissors.addEventListener('click', scissorsChoice);
+    
+    if (roundCount === 1) {
+        round.textContent = "Round: 1";
+    }
+    if (roundCount === 2) {
+        round.textContent = "Round: 2";
+    }
+    if (roundCount === 3) {
+        round.textContent = "Round: 3";
+    }
+    if (roundCount === 4) {
+        round.textContent = "Round: 4";
+    }
+    if (roundCount === 5) {
+        round.textContent = "Round: 5";
+    }
+    roundCount++;
+}
 // human
 
 
@@ -72,34 +98,48 @@ function getComputerChoice() {
         3: "scissors"
     };
     let randomNumber = Math.floor(Math.random() * 3 + 1);
-    alert(randomNumber);
+    // alert(randomNumber);
     let choice = choices[randomNumber];
 
     if (choice === choices[1]) {
-        computerChoice.textContent = "Computer chose rock!"
+        computerChoice.textContent = "Computer chose rock!";
         return "rock";
     }
     if (choice === choices[2]) {
-        computerChoice.textContent = "Computer chose paper!"
+        computerChoice.textContent = "Computer chose paper!";
         return "paper";
     }
     if (choice === choices[3]) {
-        computerChoice.textContent = "Computer chose scissors!"
+        computerChoice.textContent = "Computer chose scissors!";
         return "scissors";
     }
 }
 
 // compare
 
-function compare(humanChoice) {
-    if (humanChoice === getComputerChoice()) {
+function compare(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
         result.textContent = "Tie!";
     } 
-    if (humanChoice === "rock") {
+    // winning conditions
+    if (humanChoice === "rock" && computerChoice === "scissors") {
+        result.textContent = "You WIN!";
+    }
+    if (humanChoice === "rock" && computerChoice === "paper") {
+        result.textContent = "Computer wins! You LOSE!";
+    }
+    if (humanChoice === "paper" && computerChoice === "rock") {
+        result.textContent = "You WIN!";
+    }
+    if (humanChoice === "paper" && computerChoice === "scissors") {
+        result.textContent = "Computer wins! You LOSE!";
+    }
+    if (humanChoice === "scissors" && computerChoice === "paper") {
+        result.textContent = "You WIN!";
+    }
+    if (humanChoice === "scissors" && computerChoice === "rock") {
+        result.textContent = "Computer wins! You LOSE!";
         
     }
-}
-
-function main() {
     
 }
