@@ -56,3 +56,20 @@ function evaluate() {
         console.log("You win! Scissors beats paper.");
     }
 }
+
+function playRound() {
+    
+}
+
+const btn = document.querySelectorAll("button");
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
+
+for (let i = 0; i < btn.length; i++) {
+    btn[i].style.color = 'red';
+    
+    btn[i].addEventListener('click', () => {
+        alert('hey');
+    });
+}
