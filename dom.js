@@ -63,50 +63,7 @@ function scissorsChoice() {
 //     return humanChoice;
 // }
 // getHumanChoice();
-let rockEvent = rock.addEventListener('click', playRound);
-let paperEvent = paper.addEventListener('click', playRound);
-let scissorsEvent = scissors.addEventListener('click', playRound);
 
-function playRound() {
-    let isActive = true;
-
-    while (isActive) {
-        if (rockEvent) {
-            rockChoice();
-        }
-        if (paperEvent) {
-            paperChoice();
-        }
-        if (scissorsEvent) {
-            scissorsChoice();
-        }
-    }
-}
-
-while (isActive) {   
-    let roundCount = 1;
-    
-    if (roundCount === 1) {
-        round.textContent = "Round: 1";
-    }
-    if (roundCount === 2) {
-        round.textContent = "Round: 2";
-    }
-    if (roundCount === 3) {
-        round.textContent = "Round: 3";
-    }
-    if (roundCount === 4) {
-        round.textContent = "Round: 4";
-    }
-    if (roundCount === 5) {
-        round.textContent = "Round: 5";
-    }
-    if (roundCount === 6) {
-        roundCount = 1;
-        isActive = false;
-    }
-    roundCount++;
-}
 // human
 
 
@@ -164,3 +121,53 @@ function compare(humanChoice, computerChoice) {
     }
     
 }
+
+ // ---------------------------------------------------------------------------------
+
+let rockEvent = rock.addEventListener('click', playRound);
+let paperEvent = paper.addEventListener('click', playRound);
+let scissorsEvent = scissors.addEventListener('click', playRound);
+
+function playRound() {
+    let isActive = true;
+
+    while (isActive) {
+        if (rockEvent) {
+            rockChoice();
+            isActive = false;
+        }
+        if (paperEvent) {
+            paperChoice();
+            isActive = false;
+        }
+        if (scissorsEvent) {
+            scissorsChoice();
+            isActive = false;
+        }
+    }
+}
+
+// while (isActive) {   
+//     let roundCount = 1;
+    
+//     if (roundCount === 1) {
+//         round.textContent = "Round: 1";
+//     }
+//     if (roundCount === 2) {
+//         round.textContent = "Round: 2";
+//     }
+//     if (roundCount === 3) {
+//         round.textContent = "Round: 3";
+//     }
+//     if (roundCount === 4) {
+//         round.textContent = "Round: 4";
+//     }
+//     if (roundCount === 5) {
+//         round.textContent = "Round: 5";
+//     }
+//     if (roundCount === 6) {
+//         roundCount = 1;
+//         isActive = false;
+//     }
+//     roundCount++;
+// }
