@@ -21,9 +21,7 @@ const round = document.getElementById("round");
 // human
 function rockChoice() {
     humanChoice.textContent = "You chose rock!";
-    const human = "rock"; 
-    const computer = getComputerChoice();
-    compare(human, computer);
+    return "rock";
 }
 function paperChoice() {
     humanChoice.textContent = "You chose paper!";
@@ -96,13 +94,15 @@ function compare(humanChoice, computerChoice) {
 
 // rounds playGame()
 function playGame() {
-
+    const human = "rock"; // change to rock.value or choice.value in button or add if
+    const computer = getComputerChoice();
+    compare(human, computer);
 }
 
 // reset
 
 
 // event listener buttons for human choice
-rock.addEventListener('click', rockChoice);
+rock.addEventListener('click', rockChoice); // change to playGame
 paper.addEventListener('click', paperChoice);
 scissors.addEventListener('click', scissorsChoice);
