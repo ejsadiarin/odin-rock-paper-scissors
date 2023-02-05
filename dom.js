@@ -13,22 +13,12 @@ const result = document.getElementById("result");
 result.textContent = "test";
 
 const round = document.getElementById("round");
-// const btn = document.querySelectorAll("button");
-// for (let i = 0; i < btn.length; i++) {
-//     btn[i].style.color = 'red';
-    
-//     btn[i].addEventListener('click', () => {
-//         playRound()
-//     });
-// }
 
-// solution 1
-// can put getComputerChoice() and compare() in rockChoice() etc.
+/**
+ *  functions
+ * */ 
 
-// solution 2
-// need one function call which has all choices inside
-// then call it in compare with getComputerChoice()
-
+// human
 function rockChoice() {
     humanChoice.textContent = "You chose rock!";
     const human = "rock"; 
@@ -48,30 +38,8 @@ function scissorsChoice() {
     compare(human, computer);
 }
 
-// function getHumanChoice() {
-//     let humanChoice = "";
-//     if (rockChoice() === true) {
-//         humanChoice = "rock";
-//     }
-//     if (paperEvent) {
-//         humanChoice = "paper";
-//     }
-//     if (scissorsEvent) {
-//         humanChoice = "scissors";
-//     }
-    
-//     return humanChoice;
-// }
-// getHumanChoice();
-rock.addEventListener('click', rockChoice);
-paper.addEventListener('click', paperChoice);
-scissors.addEventListener('click', scissorsChoice);
-
-// rounds (5 rounds game) 
-
 
 // computer
-
 function getComputerChoice() {
     const choices = {
         1: "rock",
@@ -97,7 +65,6 @@ function getComputerChoice() {
 }
 
 // compare
-
 function compare(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         result.textContent = "Tie!";
@@ -124,3 +91,18 @@ function compare(humanChoice, computerChoice) {
     }
     
 }
+
+
+
+// rounds playGame()
+function playGame() {
+
+}
+
+// reset
+
+
+// event listener buttons for human choice
+rock.addEventListener('click', rockChoice);
+paper.addEventListener('click', paperChoice);
+scissors.addEventListener('click', scissorsChoice);
