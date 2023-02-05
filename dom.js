@@ -65,8 +65,9 @@ function scissorsChoice() {
 // getHumanChoice();
 rock.addEventListener('click', rockChoice);
 paper.addEventListener('click', paperChoice);
-scissors.addEventListener('click', scissorsChoices);
-// human
+scissors.addEventListener('click', scissorsChoice);
+
+// rounds (5 rounds game) 
 
 
 // computer
